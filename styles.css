@@ -1,0 +1,232 @@
+
+@font-face {
+    font-family: 'Norse Bold';
+    src:url('./Norse-Bold.otf') format('opentype');
+}
+
+:root {
+    line-height: 1.5;
+    height: 100%;
+    width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+body {
+    display: flex;
+    height: 99%;
+    width: 99%;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+  
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+input{
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    background-color: white;
+}
+
+input:hover, input:focus{
+    border-width: 2px;
+    box-shadow: 2px 2px 4px;
+}
+
+input:not(:placeholder-shown):not([type='password']):not(:focus):invalid {
+    background-color: rgba(255, 0, 0, 0.2);
+    transition: background-color 200ms linear;
+}
+
+input:not(:placeholder-shown):not([type='password']):not(:focus):valid {
+    background-color: rgba(0, 128, 0, 0.2);
+    transition: background-color 200ms linear;
+}
+
+input:not(:placeholder-shown):not([type='password']):focus {
+    background-color: white;
+    transition: background-color 200ms linear;
+}
+
+.backdrop {
+    width: 45%;
+    height: 100%;
+    background-image: url('./marek-piwnicki-0iN0KIt6lYI-unsplash.jpg');
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.title {
+   position: absolute;
+   text-align: center;
+   width: 100%;
+   top: 20%;
+   font-size: 80px;
+   font-weight: bold;
+   font-family: 'Norse Bold', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   color: rgb(3, 30, 80);
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+}
+
+.form-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+}
+
+
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 10px;
+    background-color: seashell;
+    padding-left: 40px;
+}
+
+.form-submit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 35%;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+.form-submit > button {
+    height: 15%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#sign-up{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-row > div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 30%;
+    margin-right: 10px;
+}
+
+#firstName:required + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 80px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+#email:required + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 42px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+#password:required + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 70px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+#confirmPassword:required + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 130px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+@media screen and (max-width: 850px) {
+    body{
+        flex-direction: column;
+    }
+
+    .backdrop{
+        width: 100%;
+        height: 25%;
+    }
+
+    .main-form {
+        width: 100%;
+        height: 75%;
+    }
+
+    #sign-up{
+        align-items: center;
+    }
+
+    .form-inputs{
+        align-items: center;
+        padding-left: 0px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .form-row > div{
+        margin-bottom: 10px;
+        margin-right: 0px;
+        width: 60%;
+       
+    }
+
+
+    .form-submit{
+        padding-left: 0px;
+        align-items: center;
+        height: 35%;
+    }
+
+
+
+
+
+    
+    
+    
+}
