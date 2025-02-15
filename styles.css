@@ -1,4 +1,4 @@
-
+/* General styling and normalizing */
 @font-face {
     font-family: 'Norse Bold';
     src:url('./Norse-Bold.otf') format('opentype');
@@ -30,6 +30,85 @@ p, h1, h2, h3, h4, h5, h6 {
     hyphens: auto;
 }
 
+/* Styling for form background and title */
+.backdrop {
+    width: 45%;
+    height: 100%;
+    background-image: url('./marek-piwnicki-0iN0KIt6lYI-unsplash.jpg');
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.title {
+   position: absolute;
+   text-align: center;
+   width: 100%;
+   top: 20%;
+   font-size: 80px;
+   font-weight: bold;
+   font-family: 'Norse Bold', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   color: rgb(3, 30, 80);
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
+
+/* Styling for main form below */
+.main-form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+}
+
+/* Styling for form info section */
+.form-info{
+    display: flex;
+    align-items: center;
+    height: 45%;
+    padding-left: 40px;
+}
+
+.form-info > p {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* Styling for form input section */
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 10px;
+    background-color: seashell;
+    padding-left: 40px;
+}
+
+.form-data{
+    display: flex;
+    justify-content: center;
+}
+
+#sign-up{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-row > div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 30%;
+    margin-right: 10px;
+}
+
 input{
     border-radius: 20px;
     width: 100%;
@@ -57,50 +136,47 @@ input:not(:placeholder-shown):not([type='password']):focus {
     transition: background-color 200ms linear;
 }
 
-.backdrop {
-    width: 45%;
-    height: 100%;
-    background-image: url('./marek-piwnicki-0iN0KIt6lYI-unsplash.jpg');
-    background-size: 100% 100%;
-    position: relative;
-}
-
-.title {
-   position: absolute;
-   text-align: center;
-   width: 100%;
-   top: 20%;
-   font-size: 80px;
-   font-weight: bold;
-   font-family: 'Norse Bold', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-   color: rgb(3, 30, 80);
-   background-color: rgba(245, 245, 245, 0.4);
-}
-
-.main-form{
-    display: flex;
-    flex-direction: column;
-    width: 55%;
-    height: 100%;
-}
-
-.form-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45%;
+#firstName + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 80px;
+    z-index: 20;
+    color: maroon;
 }
 
 
-.form-inputs{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 10px;
-    background-color: seashell;
-    padding-left: 40px;
+#email + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 42px;
+    z-index: 20;
+    color: maroon;
 }
 
+
+#password + span::before{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 70px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+#confirmPassword + span::after{
+    position: absolute;
+    content: "*";
+    top: 0px;
+    left: 130px;
+    z-index: 20;
+    color: maroon;
+}
+
+
+/* Styling for form submission section */
 .form-submit{
     display: flex;
     flex-direction: column;
@@ -114,71 +190,28 @@ input:not(:placeholder-shown):not([type='password']):focus {
     height: 15%;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 20px;
+    background-color: rgb(74, 125, 213);
+    color: white;
+    
 }
 
-#sign-up{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.form-submit > button:focus, .form-submit > button:hover {
+    box-shadow: 2px 2px 4px;
+    background-color: white;
+    color:black;
 }
 
-.form-row{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.form-submit > button:active{
+    box-shadow: 0px 0px 0px;
 }
-
-.form-row > div{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 30%;
-    margin-right: 10px;
-}
-
-#firstName:required + span::after{
-    position: absolute;
-    content: "*";
-    top: 0px;
-    left: 80px;
-    z-index: 20;
-    color: maroon;
-}
-
-
-#email:required + span::after{
-    position: absolute;
-    content: "*";
-    top: 0px;
-    left: 42px;
-    z-index: 20;
-    color: maroon;
-}
-
-
-#password:required + span::after{
-    position: absolute;
-    content: "*";
-    top: 0px;
-    left: 70px;
-    z-index: 20;
-    color: maroon;
-}
-
-
-#confirmPassword:required + span::after{
-    position: absolute;
-    content: "*";
-    top: 0px;
-    left: 130px;
-    z-index: 20;
-    color: maroon;
-}
-
 
 @media screen and (max-width: 850px) {
     body{
+        justify-content: center;
         flex-direction: column;
+        height: 99%;
+        width: 96%;
     }
 
     .backdrop{
@@ -189,6 +222,10 @@ input:not(:placeholder-shown):not([type='password']):focus {
     .main-form {
         width: 100%;
         height: 75%;
+    }
+
+    .form-data{
+        width: 100%;
     }
 
     #sign-up{
@@ -215,11 +252,18 @@ input:not(:placeholder-shown):not([type='password']):focus {
        
     }
 
-
     .form-submit{
         padding-left: 0px;
         align-items: center;
         height: 35%;
+    }
+
+    .form-inputs > h1{
+        text-align: center;
+    }
+
+    .form-submit > button {
+        height: 40%;
     }
 
 
