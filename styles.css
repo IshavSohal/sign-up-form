@@ -48,7 +48,7 @@ p, h1, h2, h3, h4, h5, h6 {
    top: 20%;
    font-size: 80px;
    font-weight: bold;
-   font-family: 'Norse Bold', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-family:  system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    color: rgb(3, 30, 80);
    background-color: rgba(245, 245, 245, 0.4);
 }
@@ -203,11 +203,12 @@ input:not(:placeholder-shown):focus {
 
 .form-submit > button {
     height: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-radius: 20px;
     background-color: rgb(74, 125, 213);
     color: white;
+
 }
 
 .form-submit > button:focus, .form-submit > button:hover {
@@ -294,7 +295,4 @@ input:not(:placeholder-shown):focus {
         padding-top: 20px;
         width: 60%;
     }
-
-
-
 }
