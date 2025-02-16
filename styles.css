@@ -16,8 +16,10 @@
   
 body {
     display: flex;
-    height: 99%;
-    width: 99%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
   
@@ -30,7 +32,7 @@ p, h1, h2, h3, h4, h5, h6 {
     hyphens: auto;
 }
 
-/* Styling for form background and title */
+/* Styling for form background and title section */
 .backdrop {
     width: 45%;
     height: 100%;
@@ -52,7 +54,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Styling for main form below */
+/* Styling for main form section */
 .main-form{
     display: flex;
     flex-direction: column;
@@ -71,6 +73,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .form-info > p {
     font-size: 28px;
     font-weight: 700;
+    padding: 20px;
 }
 
 
@@ -84,14 +87,24 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-left: 40px;
 }
 
+.form-inputs > h1 {
+    margin-bottom: 0px;
+}
+
 .form-data{
     display: flex;
-    justify-content: center;
+}
+
+.form-data > div {
+  width: 30%;
+  font-size: 12px;
+  padding-right: 2px;
 }
 
 #sign-up{
     display: flex;
     flex-direction: column;
+    width: 70%;
 }
 
 .form-row{
@@ -105,33 +118,39 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 30%;
     margin-right: 10px;
+    width: 50%;
 }
 
 input{
+    appearance: none;
+    outline: 1px solid gray;
     border-radius: 20px;
     width: 100%;
     padding: 5px;
     background-color: white;
+    border: 2px solid transparent;
 }
 
 input:hover, input:focus{
-    border-width: 2px;
     box-shadow: 2px 2px 4px;
 }
 
-input:not(:placeholder-shown):not([type='password']):not(:focus):invalid {
+input:focus{
+    outline: 2px solid rgb(0, 122, 252);
+}
+
+input:not(:placeholder-shown):not(:focus):invalid {
     background-color: rgba(255, 0, 0, 0.2);
     transition: background-color 200ms linear;
 }
 
-input:not(:placeholder-shown):not([type='password']):not(:focus):valid {
+input:not(:placeholder-shown):not(:focus):valid {
     background-color: rgba(0, 128, 0, 0.2);
     transition: background-color 200ms linear;
 }
 
-input:not(:placeholder-shown):not([type='password']):focus {
+input:not(:placeholder-shown):focus {
     background-color: white;
     transition: background-color 200ms linear;
 }
@@ -142,9 +161,8 @@ input:not(:placeholder-shown):not([type='password']):focus {
     top: 0px;
     left: 80px;
     z-index: 20;
-    color: maroon;
+    color: red;
 }
-
 
 #email + span::after{
     position: absolute;
@@ -152,9 +170,8 @@ input:not(:placeholder-shown):not([type='password']):focus {
     top: 0px;
     left: 42px;
     z-index: 20;
-    color: maroon;
+    color: red;
 }
-
 
 #password + span::before{
     position: absolute;
@@ -162,9 +179,8 @@ input:not(:placeholder-shown):not([type='password']):focus {
     top: 0px;
     left: 70px;
     z-index: 20;
-    color: maroon;
+    color: red;
 }
-
 
 #confirmPassword + span::after{
     position: absolute;
@@ -172,9 +188,8 @@ input:not(:placeholder-shown):not([type='password']):focus {
     top: 0px;
     left: 130px;
     z-index: 20;
-    color: maroon;
+    color: red;
 }
-
 
 /* Styling for form submission section */
 .form-submit{
@@ -187,13 +202,12 @@ input:not(:placeholder-shown):not([type='password']):focus {
 }
 
 .form-submit > button {
-    height: 15%;
+    height: 50px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 20px;
     background-color: rgb(74, 125, 213);
     color: white;
-    
 }
 
 .form-submit > button:focus, .form-submit > button:hover {
@@ -210,8 +224,6 @@ input:not(:placeholder-shown):not([type='password']):focus {
     body{
         justify-content: center;
         flex-direction: column;
-        height: 99%;
-        width: 96%;
     }
 
     .backdrop{
@@ -230,6 +242,7 @@ input:not(:placeholder-shown):not([type='password']):focus {
 
     #sign-up{
         align-items: center;
+        width: 100%;
     }
 
     .form-inputs{
@@ -258,19 +271,30 @@ input:not(:placeholder-shown):not([type='password']):focus {
         height: 35%;
     }
 
-    .form-inputs > h1{
+    .form-inputs > h1, .form-inputs > p{
+        text-align: center;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .form-info{
+        padding-left: 0px;
+    }
+
+    .form-info > p {
         text-align: center;
     }
+    
+    .form-data{
+        flex-direction: column;
+        align-items: center;
+    }
 
-    .form-submit > button {
-        height: 40%;
+    .form-data > div{
+        padding-top: 20px;
+        width: 60%;
     }
 
 
 
-
-
-    
-    
-    
 }
